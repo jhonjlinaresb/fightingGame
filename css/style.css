@@ -1,3 +1,4 @@
+
 .seccionVisible {
     background-color: black;
     width: 100vw;
@@ -15,4 +16,9 @@
 
 .general2 {
     background-color: green;
+
+}
+
+.general3 {
+    background-color: red;
 }

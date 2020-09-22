@@ -3,29 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
     <title>Document</title>
-    <link href="css/style.css" type="text/css" rel="sytlesheet">
+
+    
 </head>
-
 <body>
-    <!--Primera pantalla de press start-->
+    
+    <!-- Primera pantalla de press start -->
+    
     <section class="seccionVisible seccionVisible1" id="fase1">
-        <div class="general general1"></div>
+        <div class="general general1">
+            <button onclick="cambiaPantalla(2)">LLEVAME A LA PÁGINA 2</button>
+        </div>
     </section>
 
-    <!--Segunda pantalla parrilla de personajes-->
-    <section class="seccionVisible seccionVisible2" id="fase2">
+    <!-- Segunda pantalla parrilla de personajes -->
 
+    <section class="seccionVisible" id="fase2" style="display:none">
+        <div class="general general2">
+            <button onclick="cambiaPantalla(3)">LLEVAME A LA PÁGINA 3</button>
+        </div>
     </section>
 
-    <!--Tercera pantalla enfrentamiento pre-lucha-->
-    <section class="seccionVisible seccionVisible3" id="fase3">
+    <!-- Tercera pantalla enfrentamiento pre-lucha -->
 
+    <section class="seccionVisible" id="fase3" style="display:none">
+        <div class="general general3">
+            <button onclick="cambiaPantalla(1)">LLEVAME DE VUELTA AL PRINCIPIO</button>
+        </div>
     </section>
-
 
     <script src="js/app.js"></script>
-
 </body>
-
 </html>
