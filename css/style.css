@@ -1,0 +1,18 @@
+.seccionVisible {
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+}
+
+.general {
+    width: 75%;
+    height: 75%;
+}
+
+.general1 {
+    background-color: blue;
+}
+
+.general2 {
+    background-color: green;
+}
