@@ -1,28 +1,72 @@
-
-.seccionVisible {
-    background-image: url(../img/fondo.jpg);
-    width: 100vw;
-    height: 100vh;
-    max-width: 100%;
-    max-height: 100%;
+body{
+    margin: 0;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.general {
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 90vw;
+    height: 80vh;
+    padding: 1em;
+    background-color: rgb(84, 79, 88);
+}
+
+.cards{
     display: flex;
     justify-content: center;
-    width: 75%;
-    height: 75%;
-}
-
-.general1 {
+    align-items: center;
     background-color: blue;
+    width: 80vw;
+    height: 50vh;
 }
 
-.general2 {
-    background-color: green;
-
+.selected{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 80vw;
+    height: 50vh;
 }
 
-.general3 {
-    background-color: red;
+.pj{
+    background: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 15em;
+    height: 15em;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.p1{
+    background-image: url(../img/meliodas.png);
+    max-width: 15em;
+    max-height: 15em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.botonera{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(181, 205, 92);
+}
+
+
+.botonera button{
+    background-color: indianred;
+    font-size: 2em;
 }

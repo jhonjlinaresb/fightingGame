@@ -3,37 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link  href="css/style.css" type="text/css" rel="stylesheet">
-    <title>Document</title>
-
-    
+    <link rel="stylesheet" href="css/style.css">
+    <title>7 Pecados Capitales</title>
 </head>
 <body>
-    
-    <!-- Primera pantalla de press start -->
-    
-    <section class="seccionVisible seccionVisible1" id="fase1">
-        <div class="general general1">
-            <button onclick="cambiaPantalla(2)">LLEVAME A LA PÁGINA 2</button>
+
+    <div class="container">
+        <div class="cards" id="roster">
+            
+            <div class="pj">
+                <div class="text">Name</div>
+                <div class="text">HP</div>
+                <div class="text">Armor</div>
+                <div class="text">Armor</div>
+            </div>
+            <div class="pj 2">
+                <div class="text">Name</div>
+                <div class="text">HP</div>
+                <div class="text">Armor</div>
+                <div class="text">Armor</div>
+            </div>
+            <div class="pj 3">
+                <div class="text">Name</div>
+                <div class="text">HP</div>
+                <div class="text">Armor</div>
+                <div class="text">Armor</div>
+            </div>
+            <div class="pj 4">
+                <div class="text">Name</div>
+                <div class="text">HP</div>
+                <div class="text">Armor</div>
+                <div class="text">Armor</div>
+            </div>
+            <div class="pj 5">
+                <div class="text">Name</div>
+                <div class="text">HP</div>
+                <div class="text">Armor</div>
+                <div class="text">Armor</div>
+            </div>
+            <div class="pj 6">
+                <div class="text">Name</div>
+                <div class="text">HP</div>
+                <div class="text">Armor</div>
+                <div class="text">Armor</div>
+            </div>
+            <div class="pj 7">
+                <div class="text">Name</div>
+                <div class="text">HP</div>
+                <div class="text">Armor</div>
+                <div class="text">Armor</div>
+            </div>
+            <div class="pj 8">
+                <div class="text">Name</div>
+                <div class="text">HP</div>
+                <div class="text">Armor</div>
+                <div class="text">Armor</div>
+            </div>
+
         </div>
-    </section>
-
-    <!-- Segunda pantalla parrilla de personajes -->
-
-    <section class="seccionVisible" id="fase2" style="display:none">
-        <div class="general general2">
-            <button onclick="cambiaPantalla(3)">LLEVAME A LA PÁGINA 3</button>
+        <div class="selected" id="selected">
+            <div class="pj">
+                <div class="text">Name</div>
+                <div class="text">HP</div>
+                <div class="text">Armor</div>
+                <div class="text">Armor</div>
+            </div>
         </div>
-    </section>
-
-    <!-- Tercera pantalla enfrentamiento pre-lucha -->
-
-    <section class="seccionVisible" id="fase3" style="display:none">
-        <div class="general general3">
-            <button onclick="cambiaPantalla(1)">LLEVAME DE VUELTA AL PRINCIPIO</button>
+        <div class="botonera">
+            <h3>Simulación de pelea, abre la consola</h3>
+            <button onclick="simularBatalla()"> FIGHT!</button>
         </div>
-    </section>
-
+    </div>
     <script src="js/app.js"></script>
 </body>
 </html>
