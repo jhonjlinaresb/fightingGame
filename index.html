@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>The Game</title>
+    <title>7 Pecados Capitales</title>
 </head>
 <body>
 
+    <section class="seccionVisible" id="fase1">
+        <div class="general general1">
+            <button onclick="cambiaPantalla(2)">PRESS TO PLAY</button>
+        </div>
+    </section>
+
+    <section class="seccionVisible" id="fase2">
     <div class="container">
-        <div class="cards" id="roster">
+        <div class="cards" id="clan">
+            <button onclick="cambiaPantalla(3)">LLEVAME A LA PÁGINA 3</button>
             <div class="pj">
                 <div class="text">
                    Name <img class="meliodas" src="./img/meliodas.png" alt="meliodas">
@@ -57,6 +65,14 @@
             <button onclick="simularBatalla()"> FIGHT!</button>
         </div>
     </div>
-    <script src="js/app1.js"></script>
+    </section>
+
+    <section class="seccionVisible" id="fase3" style="display:none">
+        <div class="general2">
+            <button onclick="cambiaPantalla(1)">BACK TO THE START</button>
+        </div>
+    </section>
+
+    <script src="js/app.js"></script>
 </body>
 </html>
