@@ -1,6 +1,7 @@
+@import url('t4cbeaulieux.ttf');
 body{
     margin: 0;
-    background-color: black;
+    background-color: red;
     display: flex;
     align-items: center;
     justify-content: center;

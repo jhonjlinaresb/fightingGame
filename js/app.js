@@ -57,37 +57,36 @@ const min = 1;
 const max = 20;
 const tirarDado = () => Math.floor(Math.random() * (max - min + min)) + 1;
 
-//Elementos del HTML que vamos a modificar
+
 const clanElement = document.getElementById("clan");
 const selectedElement = document.getElementById("selected");
+const battleElement = document.getElementById("battle");
+const selected2Element = document.getElementById("selected2");
 
 selectedElement.innerHTML = "";
+selected2Element.innerHTML = "";
 
-// - Personajes de ejemplo
+
 const pers1 = new Personaje("Meliodas", 100, 10, 15, 'img/meliodas.png' );
 const pers2 = new Personaje("Elizabeth", 100, 5, 15, 'img/elizabeth.png');
 const pers3 = new Personaje("Escanor", 100, 8, 35, 'img/escanor.png');
 const pers4 = new Personaje("Merlin", 100, 5, 20, 'img/merlin.png');
 
-//Se almacenan en un array para recorrerlos y pintarlos
+
 let arrayPJ = [pers1, pers2, pers3, pers4];
 
-//Array para almacenar los PJ seleccionados
-let arrySeleccionados = [];
+
+let arraySeleccionados = [];
 const maximaSeleccionDePJ = 2;
 
-//Los dos favoritos del publico que aun no sabemos
+
 let pjSelec1;
 let pjSelec2;
 
-// Variable en la que almacenaremos el contenido HTML a mostrar
-let infoClan = "";
 
-// Funcion pintar Clan
-/* 
-    Aqui la idea es leer del array cada personaje y pintarlo en pantalla.
-    para ello, usamos el string literal en el que insertamos la info que queremos
-*/
+let infoClan = "";
+let infoBattle = "";
+
 const pintarClan = () => {
   for (let pos in arrayPJ) {
     infoClan += `<div class="pj" id="pj${pos}" onclick="selectPJ(${parseInt(
@@ -103,29 +102,24 @@ const pintarClan = () => {
   }
   clanElement.innerHTML = infoClan;
 };
-
 pintarClan();
 
-// Esta funcion lo que hace es recorrer el array de seleccionados y pintarlos en el HTML
 const pintarSeleccionados = () => {
   let infoSelected = "";
-  for (let character of arrySeleccionados) {
+  for (let character of arraySeleccionados) {
     infoSelected += `<div class="pj"> <div class="text">Name: ${character.name} <img class="meliodas" src="${character.image}" /> </div> <div class="text">HP: ${character.hp}</div> <div class="text">Armor: ${character.armor}</div> <div class="text">Damage: ${character.armor}</div> </div>`;
   }
   selectedElement.innerHTML = infoSelected;
 };
 
-/*
-    Funcion para el onClick, se le pasas como parametro la posicion en la que esta el PJ
-*/
 const selectPJ = (pos) => {
   // Solo seleccionamos mientras no superemos el limite
-  if (arrySeleccionados.length < maximaSeleccionDePJ) {
-    arrySeleccionados.push(arrayPJ[parseInt(pos)]);
+  if (arraySeleccionados.length < maximaSeleccionDePJ) {
+    arraySeleccionados.push(arrayPJ[parseInt(pos)]);
 
     //Como ya lo tenemos seleccionado, no queremos que se vuelva a seleccionar
     document.getElementById("pj" + pos).style.pointerEvents = "none";
-    document.getElementById("pj" + pos).style.backgroundColor = "grey";
+    document.getElementById("pj" + pos).style.backgroundColor = "red";
 
     pintarSeleccionados();
 
@@ -133,18 +127,13 @@ const selectPJ = (pos) => {
   }
 };
 
-// Funcion que nos pasa a las variables deseadas el objeto de los personajes
-/* 
-    *** Nota, realmente podriamos usar directamente el array de seleccionados, 
-    pero esta es otra forma valida 
-    */
 const asignarParaPelear = () => {
-  if (arrySeleccionados[0]) {
-    pjSelec1 = arrySeleccionados[0];
+  if (arraySeleccionados[0]) {
+    pjSelec1 = arraySeleccionados[0];
   }
 
-  if (arrySeleccionados[1]) {
-    pjSelec2 = arrySeleccionados[1];
+  if (arraySeleccionados[1]) {
+    pjSelec2 = arraySeleccionados[1];
   }
 };
 function sleep(ms) {
@@ -189,11 +178,8 @@ const simularBatalla = async() => {
           `\t${pjSelec2.name} : ${pjSelec2.hp} / ${pjSelec1.name} : ${pjSelec1.hp}`
         );
       }
-
-      
     }
 
-    // Anunciamos campeon
     pjSelec1.hp === 0
       ? console.log(`${pjSelec2.name} Ha ganado`)
       : console.log(`${pjSelec1.name} Ha ganado`);
