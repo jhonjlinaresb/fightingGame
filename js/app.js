@@ -28,7 +28,7 @@ const cambiaPantalla = (num) =>{
         }
     }
 
-    class personaje {
+    class Personaje {
       //Constructor basico del personaje
       constructor(name, hp, armor, dmg) {
         this.name = name;
