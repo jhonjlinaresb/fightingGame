@@ -64,7 +64,7 @@ const cambiaPantalla = (num) =>{
     const tirarDado = () => Math.floor(Math.random() * (max - min + min)) + 1;
 
     let clan = document.getElementById("clan");
-clan.innerHTML = `
+    getclan.innerHTML = `
         <div class="pj">
         <div class="text">
         Name <img class="meliodas" src="./img/meliodas.png" alt="meliodas">
