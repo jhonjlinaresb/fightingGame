@@ -60,12 +60,8 @@ const tirarDado = () => Math.floor(Math.random() * (max - min + min)) + 1;
 
 const clanElement = document.getElementById("clan");
 const selectedElement = document.getElementById("selected");
-const battleElement = document.getElementById("battle");
-const selected2Element = document.getElementById("selected2");
 
 selectedElement.innerHTML = "";
-selected2Element.innerHTML = "";
-
 
 const pers1 = new Personaje("Meliodas", 100, 10, 15, 'img/meliodas.png' );
 const pers2 = new Personaje("Elizabeth", 100, 5, 15, 'img/elizabeth.png');
@@ -85,7 +81,6 @@ let pjSelec2;
 
 
 let infoClan = "";
-let infoBattle = "";
 
 const pintarClan = () => {
   for (let pos in arrayPJ) {
@@ -113,11 +108,9 @@ const pintarSeleccionados = () => {
 };
 
 const selectPJ = (pos) => {
-  // Solo seleccionamos mientras no superemos el limite
   if (arraySeleccionados.length < maximaSeleccionDePJ) {
     arraySeleccionados.push(arrayPJ[parseInt(pos)]);
 
-    //Como ya lo tenemos seleccionado, no queremos que se vuelva a seleccionar
     document.getElementById("pj" + pos).style.pointerEvents = "none";
     document.getElementById("pj" + pos).style.backgroundColor = "red";
 
@@ -136,6 +129,23 @@ const asignarParaPelear = () => {
     pjSelec2 = arraySeleccionados[1];
   }
 };
+
+let personaje1 = document.getElementById("pj");
+let personaje2 = document.getElementById("pj1");
+let personaje3 = document.getElementById("pj2");
+let personaje4 = document.getElementById("pj3");
+
+const muestraPersonaje = (ev) => {
+
+  document.getElementById("battle").src = pers1.imagen;
+  document.getElementById(".text").innerText = pers1.name;
+  document.getElementById(".text").innerText = pers1.hp;
+  
+  document.getElementById("battle").src = pers2.imagen;
+  document.getElementById(".text").innerText = pers2.nombre;
+  document.getElementById(".text").innerText = pers2.vida;
+  
+}
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
