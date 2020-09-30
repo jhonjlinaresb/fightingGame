@@ -99,18 +99,9 @@ const pintarClan = () => {
 };
 pintarClan();
 
-const pintarSeleccionados = () => {
-  let infoSelected = "";
-  for (let character of arraySeleccionados) {
-    infoSelected += `<div class="pj"> <div class="text">Name: ${character.name} <img class="meliodas" src="${character.image}" /> </div> <div class="text">HP: ${character.hp}</div> <div class="text">Armor: ${character.armor}</div> <div class="text">Damage: ${character.armor}</div> </div>`;
-  }
-  selectedElement.innerHTML = infoSelected;
-};
-
 const selectPJ = (pos) => {
   if (arraySeleccionados.length < maximaSeleccionDePJ) {
     arraySeleccionados.push(arrayPJ[parseInt(pos)]);
-
     document.getElementById("pj" + pos).style.pointerEvents = "none";
     document.getElementById("pj" + pos).style.backgroundColor = "red";
 
@@ -118,6 +109,19 @@ const selectPJ = (pos) => {
 
     asignarParaPelear();
   }
+};
+
+const pintarSeleccionados = () => {
+  let infoSelected = "";
+  for (let character of arraySeleccionados) {
+    infoSelected += `<div class="pj"> 
+                        <div class="text">Name: ${character.name} <img class="meliodas" src="${character.image}" /> 
+                        </div> <div class="text">HP: ${character.hp}</div> 
+                        <div class="text">Armor: ${character.armor}</div> 
+                        <div class="text">Damage: ${character.armor}</div> 
+                      </div>`;
+  }
+  selectedElement.innerHTML = infoSelected;
 };
 
 const asignarParaPelear = () => {
@@ -135,16 +139,22 @@ let personaje2 = document.getElementById("pj1");
 let personaje3 = document.getElementById("pj2");
 let personaje4 = document.getElementById("pj3");
 
-const muestraPersonaje = (ev) => {
+const muestraPersonaje = () => {
 
-  document.getElementById("battle").src = pers1.imagen;
-  document.getElementById(".text").innerText = pers1.name;
-  document.getElementById(".text").innerText = pers1.hp;
-  
-  document.getElementById("battle").src = pers2.imagen;
-  document.getElementById(".text").innerText = pers2.nombre;
-  document.getElementById(".text").innerText = pers2.vida;
-  
+  document.getElementById("imagenJugador1").innerHTML = 
+                  `<img class="image_size" src="${pers1.image}">
+                  <div>
+                    <p>${pers1.name}</p>
+                    <p>${pers1.hp}</p>
+                  </div>`;
+
+  document.getElementById("imagenJugador2").innerHTML = 
+                  `<img class="image_size" src="${pers2.image}">
+                  <div>
+                    <p>${pers2.name}</p>
+                    <p>${pers2.hp}</p>
+                  </div>`;
+                                                          
 }
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -153,6 +163,7 @@ function sleep(ms) {
 const simularBatalla = async() => {
   let alive = true;
   cambiaPantalla(3)
+  muestraPersonaje()
   const mensajesDiv = document.querySelector ('.mensajes');
   //Sin PJ seleccionados no hay pelea
   if (!pjSelec1 || !pjSelec2) {

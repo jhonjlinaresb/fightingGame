@@ -193,8 +193,18 @@ body{
     padding: 1em;
 }
 
+.selected1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .botonera button{
     background: linear-gradient(180deg, #2c2c2c, red);
     font-size: 2em;
+}
+
+.image_size{
+    width: auto;
+    height: 300px;
 }
